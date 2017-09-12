@@ -1,0 +1,69 @@
+<!DOCTYPE html>  
+<html lang="en"  ng-app="myApp">  
+ <head>  
+  <title>FirebaseAuth&DB</title>  
+  <meta charset="UTF-8">  
+</head>  
+<!--AngularJS-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+<!--Bootstrap -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!--AngularJS and Firebase-->
+<script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angularFire/2.3.0/angularfire.min.js"></script>
+<script src="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.js"></script>  
+<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.css" /> 
+
+<!--App Stuff-->
+<link rel="stylesheet" href="style.css">
+<script src="app.js"></script>
+<script src="page1/page1.js"></script>
+<script src="page2/page2.js"></script> 
+<script src="page1/loginCtrl.js"></script>  
+
+
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBzEhAEUkQfVo2q7F1e53bU4cGykw-MPaU",
+    authDomain: "learning-a1358.firebaseapp.com",
+    databaseURL: "https://learning-a1358.firebaseio.com",
+    projectId: "learning-a1358",
+    storageBucket: "learning-a1358.appspot.com",
+    messagingSenderId: "181369951591"
+  };
+  firebase.initializeApp(config);
+</script>
+
+ <body>  
+        <nav class="navbar navbar-default">
+            <div class="container">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Students list</a>
+              </div>
+              <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                  <li><a href="#!/page1/pageLogin">Login</a></li>
+                  <li><a href="#!/page2">Add Student</a></li>
+      
+                </ul>
+              </div><!--/.nav-collapse -->
+            </div>
+          </nav>
+          <div class="container">
+                
+              <h2>Writing to the database and get results in the form of a table. Receiving results only after authentication</h2>
+              <ng-view></ng-view>
+          </div>
+ </body>  
+</html>  
